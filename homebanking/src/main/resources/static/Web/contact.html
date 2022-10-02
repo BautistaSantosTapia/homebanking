@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./contact.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <div id="app">
+
+        <header id="header">
+            <img src="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" alt="">
+            <h1>Liberty Bank</h1>
+        </header>
+
+        <div id="dh11">
+            <div id="hamburguesa">
+                <nav class="navbar">
+                    <div class="container-fluid d-flex flex-row justify-content-center align-items-center">
+
+                      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" ><span class="navbar-toggler border-0"><img id="menuImg" src="./img/menu-4-xxl.png" alt="menu"></span></button>
+                      <p class="navbar-brand">Menu</p>
+
+                      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="offcanvasLogo" src="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" alt="logo"> Liberty Bank</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                              <a class="nav-link" href="./accounts.html"><img class="navImg" src="./img/external-accounts-data-science-kiranshastry-lineal-kiranshastry.png" alt="cuentas"> Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><img class="navImg" src="./img/group-task.png" alt="contacto"> Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html" @click="postCerrar"><img class="navImg" src="./img/external-logout-social-media-sbts2018-outline-sbts2018.png" alt="cerrar"> Cerrar Sesion</a>
+                            </li>
+                            
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="dh2">
+                <a href="./accounts.html"><img src="./img/external-accounts-data-science-kiranshastry-lineal-kiranshastry.png" alt="cuentasyprestamos"></a>
+                <p>Inicio</p>
+            </div>
+            <div id="dh3">
+                <a href="./contact.html#redes1"><img src="./img/group-task.png" alt="contacto"></a>
+                <p>Contacto</p>
+            </div>
+            <div id="dh4">
+                <a href="./index.html" @click="postCerrar"><img src="./img/external-logout-social-media-sbts2018-outline-sbts2018.png" alt="cerrar"></a>
+                <p>Cerrar Sesion</p>
+            </div>
+        </div>
+
+        <div id="d1">
+            <div id="redes1">
+
+                <div id="caja1">
+                    <div id="caja11">
+                        <h2>Whatsapp</h2>
+                        <img src="./img/whatsapp.png" alt="whatsapp">
+                    </div> 
+                    <div id="caja12">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Ir a la pagina</a>
+                    </div>
+                </div>
+
+                <div id="caja2">
+                    <div id="caja21">
+                        <h2>Twitter</h2>
+                        <img src="./img/twitter-circled.png" alt="twitter">
+                    </div>
+                    <div id="caja22">
+                        <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">Ir a la pagina</a>
+                    </div>
+                </div>
+
+                <div id="caja3">
+                    <div id="caja31">
+                        <h2>Instagram</h2>
+                        <img src="./img/instagram-new--v2.png" alt="instagram">
+                    </div>
+                    <div id="caja32">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Ir a la pagina</a>
+                    </div>
+                </div>
+
+                <div id="caja4">
+                    <div id="caja41">
+                        <h2>Facebook</h2>
+                        <img src="./img/facebook-new.png" alt="facebook">
+                    </div>
+                    <div id="caja42">
+                        <a href="https://es-la.facebook.com" target="_blank" rel="noopener noreferrer">Ir a la pagina</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <footer id="df1">
+            <div id="foo1">
+                <p>Seguinos en todas las redes para estar al tanto de las actualizaciones y posibilidades que te ofrecemos!!!</p>
+            </div>
+            <div id="foo2">
+                <h3>Cohort 29</h3>
+            </div>
+        </footer>
+        
+    </div>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+<script src="https://unpkg.com/vue@3"></script> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="./contact.js"></script>
+</body>
+</html>

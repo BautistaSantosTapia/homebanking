@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" type="logo">
+    <link rel="stylesheet" href="./index.css">
+    <title>INDEX</title>
+</head>
+<body>
+    <div id="app">
+
+        <!-- <header id="header">
+
+            <div id="dh1">
+                <h1>HOMEBANKING</h1>
+            </div>
+            <div id="dh11">
+                
+                <div id="dh3">
+                    <a href="#Inicio">Iniciar Sesion</a>
+                </div>
+                <div id="dh2">
+                    <a href="#Registro">Registrarme</a>
+                </div>
+                
+            </div>
+
+        </header> -->
+
+        <div id="d1">
+
+            <div id="dTitulo">
+                <img src="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" alt="">
+                <h1>Liberty Bank</h1>
+            </div>
+
+            <div id="d2">
+
+                <div id="dIniciar">
+                    <h2 id="Inicio">Iniciar Sesion</h2>
+                    <form id="form1">
+                        <label>
+                            <input type="text" placeholder="Introduzca mail" v-model="mail1" required>
+                        </label>
+                        <label>
+                            <input type="password" placeholder="Contrasena" v-model="contrasena1" required>
+                        </label>
+                        <label>
+                            <input @click.prevent="postInicio()" type="submit" class="send">
+                        </label>
+                    </form>
+                </div>
+
+
+                <div id="dRegistro">
+                    <h2 id="Registro">Registrarme</h2>
+                    <form id="form2">
+                        <label>
+                            <input type="text" placeholder="Introduzca nombre" v-model="nombre2" required>
+                        </label>
+                        <label>
+                            <input type="text" placeholder="Introduzca apellido" v-model="apellido2" required>
+                        </label>
+                        <label>
+                            <input type="text" placeholder="Introduzca mail" v-model="mail2" required>
+                        </label>
+                        <label>
+                            <input type="password" placeholder="Contrasena" v-model="contrasena2" required>
+                        </label>
+                        <label>
+                            <input @click.prevent="postRegistro()" type="submit" class="send">
+                        </label>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    <!-- 
+        <footer id="df1">
+            <div id="foo1">
+                <div><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./img/instagram-new--v2.png" alt="instagram"></a></div>
+                <div><a href="https://es-la.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./img/facebook-new.png" alt="facebook"></a></div>
+                <div><a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer"><img src="./img/twitter-circled.png" alt="twitter"></a></div>
+                <div><a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp.png" alt="whatsapp"></a></div>
+            </div>
+                /* El atributo rel coloca la relación entre tu página y el URL enlazado.  Posicionando en este noopener noreferrer para prevenir el tipo de phishing conocido como tabnabbing.
+                Tabnabbing, es un exploit que usa el comportamiento por defecto del navegador con target="_blank" para ganar acceso parcial a tu página a través window.object API. 
+                El atributorel pone a noreferrer noopener para prevenir posibles ataques maliciosos de las páginas que tú enlaces. */
+            <div id="foo2">
+                <h3>Cohort 29</h3>
+            </div>
+        </footer> -->
+    
+    
+    </div>
+
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+<script src="https://unpkg.com/vue@3"></script> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./transfers.css">
+    <title>Transferencias</title>
+</head>
+<body>
+    <div id="app">
+
+        
+        <header id="header">
+            <img src="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" alt="logo">
+            <h1>Liberty Bank</h1>
+        </header>
+    
+        <div id="dh11">
+            <div id="hamburguesa">
+                <nav class="navbar">
+                    <div class="container-fluid d-flex flex-row justify-content-center align-items-center">
+
+                      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" ><span class="navbar-toggler border-0"><img id="menuImg" src="./img/menu-4-xxl.png" alt="menu"></span></button>
+                      <p class="navbar-brand">Menu</p>
+
+                      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="offcanvasLogo" src="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" alt="logo"> Liberty Bank</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                              <a class="nav-link" href="./accounts.html"><img class="navImg" src="./img/external-accounts-data-science-kiranshastry-lineal-kiranshastry.png" alt="cuentas"> Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><img class="navImg" src="./img/initiate-money-transfer.png" alt="transferencias"> Transferencias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html" @click="postCerrar"><img class="navImg" src="./img/external-logout-social-media-sbts2018-outline-sbts2018.png" alt="cerrar"> Cerrar Sesion</a>
+                            </li>
+                            
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="dh2">
+                <a href="./accounts.html"><img src="./img/external-accounts-data-science-kiranshastry-lineal-kiranshastry.png" alt="inicio"></a>
+                <p>Inicio</p>
+            </div>
+            <div id="dh3">
+                <a href="#tTransferencia"><img src="./img/initiate-money-transfer.png" alt="transferencias"></a>
+                <p>Transferencias</p>
+            </div>
+            <div id="dh4">
+                <a href="./index.html" @click="postCerrar"><img src="./img/external-logout-social-media-sbts2018-outline-sbts2018.png" alt="cerrar"></a>
+                <p>Cerrar Sesion</p>
+            </div>
+        </div>
+
+
+        <div id="d2">
+            <div id="d21">
+                <img id="imgCuentas" src="./img/1128447.png" alt="cuentas">
+                <h2 id="cuentasLink">Mis Cuentas</h2>
+            </div>
+            <div id="d22">
+
+                <div id="dd2"  v-for="cuenta in arrayCuentasTrue" v-if="arrayCuentasTrue != '' ">
+                    <div id="dd22">
+                        <p>{{cuenta.numero}}</p>
+                    </div>
+                    <div id="dd23">
+                        <p>{{cuenta.accountType}}</p>
+                    </div>
+                    <div id="dd24">
+                        <p>{{plata(cuenta.balance)}}</p>
+                    </div>
+                    <div id="dd25">
+                        <a :href="'account.html?id=' + cuenta.id"><img src="./img/external-arrows-arrows-those-icons-lineal-color-those-icons.png" alt="flecha"></a>
+                    </div>
+                </div>
+                <div id="dd26" v-else>
+                    <h3>No tenes una cuenta</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="d1">
+            <h2 id="tTransferencia">Realizar una transferencia</h2>
+            <div id="dTransferencia">
+                
+                <form id="formTransferencia"  @submit.prevent="confirmacion">
+                    
+                    <div id="f9">
+                        <div id="f9-1">
+                            <h2>Liberty Bank</h2>
+                        </div>
+                        <div id="f9-2">
+                            <img src="./img/52e06e07244a3590366669665ea540e3-icone-do-circulo-do-banco-3.png" alt="logo">
+                        </div>
+                    </div>
+
+                    <div id="f0">
+                        <div id="f0-1">
+                            <label for="origen">Numero de la cuenta de origen:
+                                <input type="text" id="origen" name="origen" value="origen" v-model="origen" required placeholder="VINXXXXXX">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="f1">
+                        <div id="f1-1" >
+                            <p>Para:</p>
+                            <div id="f1-11">
+                                <label for="propia">Cuenta propia
+                                    <input type="radio" id="propia" name="who" value="propia" v-model="rd"/>
+                                </label>
+
+                                <label for="tercero">Cuenta de tercero
+                                    <input type="radio" id="tercero" name="who" value="tercero"  v-model="rd"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="f1-2">
+                            <div id="f1-3" v-if=" rd == 'propia' ">
+                                    <label for="miCuenta" >Selecciona otra de tus cuentas
+                                        <input type="text" id="miCuenta" name="whoText" value="miCuenta" v-model="whoText"  placeholder="VINXXXXXX"> <!-- whoText -->
+                                    </label>
+                            </div>
+                            <div id="f1-3" v-else-if=" rd == 'tercero' ">
+                                    <label for="destinatario">Selecciona cuenta de terceros
+                                        <input type="text" id="destinatario" name="whoText" value="destinatario" v-model="whoText"  placeholder="VINXXXXXX"> <!-- whoText2 -->
+                                    </label>
+                            </div>
+                            <div v-else id="nulo">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="f2">
+                        <div id="f2-1">
+                            <p>Monto a transferir:</p>
+                            <label for="monto">$
+                                <input type="number" id="monto" name="monto" value="monto" v-model="monto" required/>
+                            </label>
+                        </div>
+                        <div id="f2-2">
+                            <p>Descripcion:</p>
+                            <label for="descripcion">
+                                <input type="text" id="descripcion" name="descripcion" value="descripcion" v-model="descripcion" required> 
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="f3">
+                        <label>
+                            <input type="submit">
+                        </label>
+                    </div>
+
+                    <div id="f4">
+                        <img src="./img/R.png" alt="">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <footer id="df1">
+            <div id="foo1">
+                <div><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./img/instagram-new--v2.png" alt="instagram"></a></div>
+                <div><a href="https://es-la.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./img/facebook-new.png" alt="facebook"></a></div>
+                <div><a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer"><img src="./img/twitter-circled.png" alt="twitter"></a></div>
+                <div><a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp.png" alt="whatsapp"></a></div>
+            </div>
+            <div id="foo2">
+                <h3>Cohort 29</h3>
+            </div>
+        </footer>
+
+    </div>
+    
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+<script src="https://unpkg.com/vue@3"></script> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="./transfers.js"></script>
+</body>
+</html>
